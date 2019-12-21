@@ -19,13 +19,14 @@
 
       <form action="{% url 'admin_savedetails' %}" method="post">
       {% csrf_token %}
-
-        Admin Login<br/><br/>
-        Username:<input type="text" name="t1" required><br/><br/>
-        Password:
-        <input type="password" name="t2" required><br/><br/>
-            <button type="submit">Login</button>
-
+       <table align="center" border="0">
+           <tr><td></td>
+               <td>Admin Login</td></tr>
+           <tr><td> Username:</td><td><input type="text" name="t1" required></td></tr>
+        <tr><td>Password:</td>
+            <td><input type="password" name="t2" required></td>
+            <tr><td></td><td><button type="submit">Login</button></td></tr>
+</table>
       </form>
 
 {% if message %}

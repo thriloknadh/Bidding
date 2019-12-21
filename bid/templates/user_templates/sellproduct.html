@@ -15,22 +15,21 @@
   {% include 'user_templates/user_menu.html' %}
 <table border="0" align="center">
 <tr><th>
-      <form action="{% url 'saveselldetails' %}" method="post">
+      <form  method="post" action="{% url "saveselldetails" %}" enctype="multipart/form-data">
             {% csrf_token %}
-        <table align="center">
+            <table border="0" align="center">
             <tr><th></th><th>PRODUCT DETAILS</th></tr>
             <tr>
-            <td>pid:</td><td><input type="number" name="t1" required/></td>
+                <td>pid:</td><td><input type="number" name="t1" required/></td></tr>
             <tr><td>Pname:</td><td><input type="text" name="t2" required/></td></tr>
             <tr><td>bprice:</td><td><input type="number" name="t3" required/></td></tr>
             <tr><td>pqnty:</td><td><input type="number" name="t4" required></td></tr>
             <tr> <td>pinfo:</td><td><textarea name="t5" required></textarea></td></tr>
             <tr><td>pimage:</td><td><input type="file"  name="t6"/></td></tr>
             <tr><td><button type="submit">SAVE</button></td></tr>
-        </table></form></th>
-
+        </table></form>
 <th>
-      <table align="center" border="2">
+      <table align="center"  border="2">
           <tr><th>Pidno</th>
               <th>Pname</th>
               <th>Pprice</th>
@@ -40,15 +39,16 @@
               <th>Pstatus</th>
               <th>Uid</th>
 
+
           {% for x in msg %}
-             <tr><th>{{ x.id }}</th>
-              <th>{{ x.name }}</th>
-              <th>{{ x.price }}</th>
+             <tr><th>{{ x.pid }}</th>
+              <th>{{ x.pname }}</th>
+              <th>{{ x.bprice }}</th>
               <th>{{ x.pqnty }}</th>
               <th>{{ x.pinfo }}</th>
-              <th>{{ x.name }}</th>
-              <th>{{ x.images }}</th>
+              <th><img src="{{ x.images.url }}" height="50" width="50"></th>
               <th>{{ x.status }}</th>
+              <th>{{ x.uid_id }}</th>
 
           {% endfor %}
       </table>

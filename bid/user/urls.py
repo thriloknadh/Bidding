@@ -22,8 +22,12 @@ from user import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('log&reg/',TemplateView.as_view(template_name="user_templates/log&reg.html"),name="log&reg"),
+    path('user_home1/',TemplateView.as_view(template_name="user_templates/user_home.html"),name="user_home1"),
     path('savedetails/',views.saveDetails,name="savedetails"),
     path('user_home/',views.user_home,name="user_home"),
     path('sellproduct/',TemplateView.as_view(template_name="user_templates/sellproduct.html"),name="sellproduct"),
-    path('saveselldetails/',views.saveSellDetails,name="saveselldetails")
+    path('saveselldetails/',views.saveSellDetails,name="saveselldetails"),
+    path('bid_product/',views.bidProduct,name="bid_product"),
+    path('displayproduct/',views.displayProduct,name="displayproduct"),
+    path('logout/',views.logout,name="logout")
 ]

@@ -13,13 +13,13 @@
   <body>
   <table align="center">
     <tr>
-        <th><nav class="navbar navbar-light bg-light"><form class="form-inline" action="{% url 'home' %}">
+        <th><nav class="navbar navbar-light bg-light"><form class="form-inline" action="{% url 'user_home1' %}">
             <button type="submit" class="btn btn-outline-success">HOME</button></form>---
-<form class="form-inline" action="">
+<form class="form-inline" action="{% url 'bid_product' %}">
     <button class="btn btn-outline-success" type="submit">BidProduct</button></form>---
 <form class="form-inline" action="{% url 'sellproduct' %}">
     <button  class="btn btn-outline-success" type="submit">SellProduct</button></form>---
-<form class=form-inline" action="">
+<form class=form-inline" action="{% url 'logout' %}">
     <button  class="btn btn-outline-success" type="submit">Logout</button></form></nav>
         </th>
     </tr>
